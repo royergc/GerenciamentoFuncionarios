@@ -3,6 +3,7 @@ package gestaofuncionarios.Empresa;
 import gestaofuncionarios.Pessoa;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public abstract class Funcionario extends Pessoa {
 
@@ -12,7 +13,7 @@ public abstract class Funcionario extends Pessoa {
     private LocalDate dataAdmissao;
     private boolean ativo;
 
-    public Funcionario(String nome, String cpf, String rg, String endereco, LocalDate dataNascimento,
+    public Funcionario(String nome, String cpf, String rg, String endereco, String dataNascimento,
                        String matricula, String email, double salarioBase) {
         super(nome, cpf, rg, endereco, dataNascimento);
         this.matricula = matricula;
@@ -37,7 +38,7 @@ public abstract class Funcionario extends Pessoa {
 
     public double getSalarioBase() { return salarioBase; }
 
-    public LocalDate getDataAdmissao() { return dataAdmissao; }
+    public String getDataAdmissao() { return dataAdmissao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")); }
 
     public boolean isAtivo() { return ativo; }
 
@@ -50,5 +51,7 @@ public abstract class Funcionario extends Pessoa {
     protected void setMatricula(String matricula) { this.matricula = matricula; }
 
     protected void setDataAdmissao(LocalDate data) { this.dataAdmissao = data; }
+
+    protected void setDataAdmissao(String data) { this.dataAdmissao = LocalDate.parse(data, DateTimeFormatter.ofPattern("dd/MM/yyyy")); }
 
 }

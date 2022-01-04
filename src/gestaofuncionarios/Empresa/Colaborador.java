@@ -8,7 +8,7 @@ public class Colaborador extends Funcionario {
 
     private LiderTecnico liderTecnico;
 
-    public Colaborador(String nome, String cpf, String rg, String endereco, LocalDate dataNascimento,
+    public Colaborador(String nome, String cpf, String rg, String endereco, String dataNascimento,
                        String matricula, String email, double salarioBase) {
         super(nome, cpf, rg, endereco, dataNascimento, matricula, email, salarioBase);
     }

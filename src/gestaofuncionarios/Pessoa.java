@@ -1,6 +1,7 @@
 package gestaofuncionarios;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Pessoa {
 
@@ -10,12 +11,12 @@ public class Pessoa {
     private String endereco;
     private LocalDate dataNascimento;
 
-    public Pessoa(String nome, String cpf, String rg, String endereco, LocalDate dataNascimento) {
+    public Pessoa(String nome, String cpf, String rg, String endereco, String dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.rg = rg;
         this.endereco = endereco;
-        this.dataNascimento = dataNascimento;
+        this.dataNascimento = LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     public String getNome() { return nome; }
@@ -28,7 +29,7 @@ public class Pessoa {
         return endereco;
     }
 
-    public LocalDate getDataNascimento() { return dataNascimento; }
+    public String getDataNascimento() { return dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")); }
 
     public void setNome(String nome) { this.nome = nome; }
 
@@ -38,6 +39,6 @@ public class Pessoa {
 
     public void setEndereco(String endereco) { this.endereco = endereco; }
 
-    public void setDataNascimento(LocalDate dataNascimento) { this.dataNascimento = dataNascimento; }
+    public void setDataNascimento(String dataNascimento) { this.dataNascimento = LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("dd/MM/yyyy")); }
 
 }

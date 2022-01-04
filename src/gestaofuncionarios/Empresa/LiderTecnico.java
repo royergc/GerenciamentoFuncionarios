@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class LiderTecnico extends Funcionario {
 
-    public LiderTecnico(String nome, String cpf, String rg, String endereco, LocalDate dataNascimento,
+    public LiderTecnico(String nome, String cpf, String rg, String endereco, String dataNascimento,
                         String matricula, String email, double salarioBase) {
         super(nome, cpf, rg, endereco, dataNascimento, matricula, email, salarioBase);
     }
