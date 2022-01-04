@@ -4,6 +4,8 @@ import gestaofuncionarios.Pessoa;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Funcionario extends Pessoa {
 
@@ -30,6 +32,21 @@ public abstract class Funcionario extends Pessoa {
         this.salarioBase = salarioBase;
         this.dataAdmissao = LocalDate.now();
         this.ativo = true;
+    }
+
+    public List<String> getDadosFuncionario() {
+        List<String> dadosFuncionario = new ArrayList<>();
+        dadosFuncionario.add("Nome: " + getNome());
+        dadosFuncionario.add("Cpf: " + getCpf());
+        dadosFuncionario.add("RG: " + getRg());
+        dadosFuncionario.add("Endereço: " + getEndereco());
+        dadosFuncionario.add("Data Nascimento: " + getDataNascimento());
+        dadosFuncionario.add("Matricula: " + getMatricula());
+        dadosFuncionario.add("Email: " + getEmail());
+        dadosFuncionario.add("Salario : " + getSalarioBase());
+        dadosFuncionario.add("Data Admissao: " + getDataAdmissao());
+        dadosFuncionario.add("Trabalhando atualmente: " + (isAtivo() ? "Sim" : "Nao"));
+        return dadosFuncionario;
     }
 
     public String getMatricula() { return matricula; }
