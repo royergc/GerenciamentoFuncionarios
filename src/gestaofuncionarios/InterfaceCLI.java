@@ -29,8 +29,34 @@ public class InterfaceCLI {
 
         mensagemBemVindo();
         exibeMenuPrincipal();
-
-
+        int opcao;
+        do {
+            exibeMenuPrincipal();
+            opcao = lerEntradaInt();
+            switch(opcao){
+                case 1:
+                    // adicionar funcionario
+                    break;
+                case 2:
+                    // ver detalhes funcionario
+                    break;
+                case 3:
+                    // demitir funcionario
+                    break;
+                case 4:
+                    // atualizar informações funcionario
+                    break;
+                case 5:
+                    // listar funcionarios
+                    break;
+                case 6:
+                    // listar somente funcionarios trabalhando
+                    break;
+                case 7:
+                    // listar somente funcionarios demitidos
+                    break;
+            }
+        } while(opcao != 8);
     }
 
     public static void mensagemBemVindo() {
@@ -38,11 +64,19 @@ public class InterfaceCLI {
         System.out.println(" ======================================================");
         System.out.println(" Bem vindo ao sistema de Gerenciamento de Funcionarios ");
         System.out.println(" ======================================================");
+        pulaLinha();
+        pulaLinha();
+        pulaLinha();
+        System.out.println("Pressione qualquer tecla para acessar o menu principal...");
+        Scanner entrada = new Scanner(System.in);
+        entrada.nextLine();
     }
 
     public static void exibeMenuPrincipal() {
-        pulaLinha();
+        limpaPagina();
+        System.out.println("=========================");
         System.out.println("Escolha a opcao desejada: ");
+        System.out.println("=========================");
         System.out.println(" 1 - Adicionar funcionario");
         System.out.println(" 2 - Ver detalhes de um funcionario");
         System.out.println(" 3 - Demitir funcionario");
@@ -64,7 +98,7 @@ public class InterfaceCLI {
     public static int lerEntradaInt() {
         Scanner entrada = new Scanner(System.in);
         String parser = entrada.nextLine();
-//            parser.replaceAll()
+        parser = parser.replaceAll( "[^0-9]","0");
         return Integer.parseInt(parser);
     }
 }
