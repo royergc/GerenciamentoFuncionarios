@@ -1,9 +1,6 @@
 package gestaofuncionarios;
 
-import gestaofuncionarios.Empresa.Colaborador;
-import gestaofuncionarios.Empresa.GerenteDepartamento;
-import gestaofuncionarios.Empresa.GestorFuncionarios;
-import gestaofuncionarios.Empresa.LiderTecnico;
+import gestaofuncionarios.Empresa.*;
 
 import java.time.LocalDate;
 
@@ -30,6 +27,9 @@ public class InterfaceCLI {
         gestor.adicionarFuncionario(colaborador1);
         gestor.adicionarFuncionario(lider1);
         gerenteDpto1.definirLiderTecnico(colaborador1,lider1);
+        Departamento dptoMkt = new Departamento("Marketing");
+
+        gerenteDpto1.alocarDepartamento(dptoMkt,colaborador1);
 
         System.out.println(gestor.listarFuncionarios().toString());
 

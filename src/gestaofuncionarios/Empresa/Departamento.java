@@ -1,5 +1,6 @@
 package gestaofuncionarios.Empresa;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Departamento {
@@ -9,6 +10,7 @@ public class Departamento {
     private GerenteDepartamento gerenteDepartamento;
 
     public Departamento(String nomeDepartamento) {
+        membrosDepartamento = new ArrayList<>();
         this.nomeDepartamento = nomeDepartamento;
     }
 
@@ -49,6 +51,7 @@ public class Departamento {
         return false;
     }
 
+    public String getNomeDepartamento() { return nomeDepartamento; }
     public List<Funcionario> getMembrosDepartamento() {
         return membrosDepartamento;
     }
