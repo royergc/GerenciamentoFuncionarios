@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class InterfaceCLI {
 
     public static void main(String[] args) {
+
         GestorFuncionarios gestor = new GestorFuncionarios();
         LocalDate dataNasc = LocalDate.of(1981, 9, 14);
         Pessoa pessoa1 = new Pessoa("Joao da Silva", "06706746991", "2004692", "Rua Lages, 268", "01/01/2000");
@@ -28,7 +29,6 @@ public class InterfaceCLI {
         System.out.println(gestor.listarFuncionarios().toString());
 
         mensagemBemVindo();
-        exibeMenuPrincipal();
         int opcao;
         do {
             exibeMenuPrincipal();
