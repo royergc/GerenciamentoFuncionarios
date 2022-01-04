@@ -42,10 +42,17 @@ public class Empresa {
         return gerenteGeral;
     }
 
-    protected boolean setGerenteGeral(GerenteGeral gerenteGeral) {
+    public boolean setGerenteGeral(GerenteGeral gerenteGeral) {
         if(gerenteGeral != null ) {
             this.gerenteGeral = gerenteGeral;
             return true;
+        }
+        return false;
+    }
+
+    public boolean setGerenteDepartamento(GerenteDepartamento gerente, Departamento departamento) {
+        if(gerente != null && departamento != null) {
+            return departamento.setGerenteDepartamento(gerente);
         }
         return false;
     }
