@@ -37,6 +37,7 @@ Decidi criar as seguintes classes
 - GerenteGeral: herda de funcionário e também implementa a interface Gerente, implementando os mesmos comportamentos
 - GestorFuncionarios: implementa a interface RH, que define os comportamentos de adicionar funcionario na empresa, alterar os dados do funcionario, aumentar salário do funcionario, listar todos os funcionarios, listar os funcionarios ativos e os funcionarios inativos. 
 - Departamento: possui um GerenteDepartamento e uma lista de Funcionários que fazem parte do departamento, com os métodos para adicionar e remover funcionários desse departamento.
+- Empresa: possui uma lista de Departamentos e guarda o GerenteGeral da empresa, além dos métodos de criarDepartamentos e definir GerenteDepartamento e GerenteGeral
 - InterfaceCLI: responsável por rodar a aplicação e fazer a interface com o usuário. Ela interage com o sistema através das interfaces do RH e do Gerente. 
 
 Criei um diagrama de classes simplificado para tentar ilustrar a arquitetura do sistema e o relacionamento entre as classes do projeto:
