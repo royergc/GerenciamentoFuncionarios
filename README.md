@@ -41,3 +41,4 @@ Decidi criar as seguintes classes
 
 Criei um diagrama de classes simplificado para tentar ilustrar a arquitetura do sistema e o relacionamento entre as classes do projeto:
 
+![Diagrama de Classes](DiagramaClassesGerenciamentoFuncionarios.png)
