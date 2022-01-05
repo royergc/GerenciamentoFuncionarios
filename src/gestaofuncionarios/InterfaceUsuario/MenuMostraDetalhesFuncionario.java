@@ -31,8 +31,8 @@ public class MenuMostraDetalhesFuncionario {
             System.out.println("Exibindo dados do funcionario");
             System.out.println("=============================");
             pulaLinha();
-            for(String line : funcionario.getDadosFuncionario()) {
-                System.out.println(line);
+            for(String linha : funcionario.getDadosFuncionario()) {
+                System.out.println(linha);
             }
             pulaLinha();
         }

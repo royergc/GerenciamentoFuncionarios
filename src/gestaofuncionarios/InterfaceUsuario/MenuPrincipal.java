@@ -37,6 +37,8 @@ public class MenuPrincipal {
                     break;
                 case 5:
                     // listar funcionarios
+                    MenuListaFuncionarios.listaFuncionarios();
+                    retornaMenuPrincipal();
                     break;
                 case 6:
                     // listar somente funcionarios trabalhando
