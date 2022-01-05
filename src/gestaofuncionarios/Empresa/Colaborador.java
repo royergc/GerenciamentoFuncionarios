@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Colaborador extends Funcionario {
 
-    private LiderTecnico liderTecnico;
+    private String liderTecnico;
 
     public Colaborador(String nome, String cpf, String rg, String endereco, String dataNascimento,
                        String matricula, String email, double salarioBase) {
@@ -19,14 +19,10 @@ public class Colaborador extends Funcionario {
         super(pessoa, matricula, email, salarioBase);
     }
 
-    public String getLiderTecnico() { return liderTecnico.getNome(); }
+    public String getLiderTecnico() { return liderTecnico; }
 
-    protected boolean setLiderTecnico(LiderTecnico lider) {
-        if(lider != null) {
-            this.liderTecnico = lider;
-            return true;
-        }
-        return false;
+    protected void setLiderTecnico(String lider) {
+        this.liderTecnico = lider;
     }
 
     @Override

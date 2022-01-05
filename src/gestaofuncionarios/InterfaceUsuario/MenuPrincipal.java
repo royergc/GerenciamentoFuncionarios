@@ -26,7 +26,7 @@ public class MenuPrincipal {
         gestor.adicionarFuncionario(gerenteDpto1);
         gestor.adicionarFuncionario(colaborador1);
         gestor.adicionarFuncionario(lider1);
-        gerenteDpto1.definirLiderTecnico(colaborador1, lider1);
+        gerenteDpto1.definirLiderTecnico(colaborador1, lider1.getNome());
         Departamento dptoMkt = new Departamento("Marketing");
         Empresa.alocarDepartamento(dptoMkt, colaborador1);
         System.out.println(gestor.listarFuncionarios().toString());

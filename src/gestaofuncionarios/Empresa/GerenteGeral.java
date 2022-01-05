@@ -16,9 +16,9 @@ public class GerenteGeral extends Funcionario implements Gerente {
         super(pessoa, matricula, email, salarioBase);
     }
 
-    public boolean definirLiderTecnico(Funcionario funcionario, LiderTecnico liderTecnico) {
+    public boolean definirLiderTecnico(Funcionario funcionario, String nomeLiderTecnico) {
         if(funcionario instanceof Colaborador) {
-            ((Colaborador) funcionario).setLiderTecnico(liderTecnico);
+            ((Colaborador) funcionario).setLiderTecnico(nomeLiderTecnico);
             return true;
         }
         return false;
