@@ -53,7 +53,6 @@ public class MenuDemitirFuncionario {
             int escolha = lerEntradaInt();
             gerentes.get(escolha).demitirFuncionario(funcionario);
             System.out.println("Funcionario demitido!");
-            retornaMenuPrincipal();
         }
     }
 }
