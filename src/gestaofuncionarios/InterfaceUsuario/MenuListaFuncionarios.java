@@ -20,12 +20,17 @@ public class MenuListaFuncionarios {
             case ATIVOS -> listaFuncionarios = gestor.listarFuncionariosAtivos();
             case DEMITIDOS -> listaFuncionarios = gestor.listarFuncionariosInativos();
         }
-        for(Funcionario funcionario: listaFuncionarios) {
-            System.out.println("--------------------------------");
-            for(String linha : funcionario.getDadosFuncionario()) {
-                System.out.println(linha);
+        if(listaFuncionarios.isEmpty()) {
+            System.out.println("Nenhum funcionario encontrado");
+        }
+        else {
+            for (Funcionario funcionario : listaFuncionarios) {
+                System.out.println("--------------------------------");
+                for (String linha : funcionario.getDadosFuncionario()) {
+                    System.out.println(linha);
+                }
+                pulaLinha();
             }
-            pulaLinha();
         }
     }
 }
