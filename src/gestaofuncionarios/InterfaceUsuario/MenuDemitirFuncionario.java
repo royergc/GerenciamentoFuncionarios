@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.*;
 import static gestaofuncionarios.InterfaceUsuario.MenuMostraDetalhesFuncionario.escolherFuncionario;
-import static gestaofuncionarios.InterfaceUsuario.MenuPrincipal.retornaMenuPrincipal;
 
 public class MenuDemitirFuncionario {
 
@@ -44,10 +43,10 @@ public class MenuDemitirFuncionario {
             System.out.println("Por favor, escolha o gerente que autorizou a demissao: ");
             for(int i = 0 ; i < gerentes.size(); i++) {
                 if(gerentes.get(i) instanceof GerenteGeral) {
-                    System.out.println(i + ((GerenteGeral) gerentes.get(i)).getNome());
+                    System.out.println(i + " - " + ((GerenteGeral) gerentes.get(i)).getNome());
                 }
                 else {
-                    System.out.println(i + ((GerenteDepartamento) gerentes.get(i)).getNome());
+                    System.out.println(i + " - " + ((GerenteDepartamento) gerentes.get(i)).getNome());
                 }
             }
             int escolha = lerEntradaInt();
