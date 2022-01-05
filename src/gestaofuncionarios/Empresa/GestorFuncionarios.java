@@ -6,11 +6,7 @@ import java.util.List;
 
 public class GestorFuncionarios implements RH {
 
-    private static List<Funcionario> funcionarios;
-
-    public GestorFuncionarios() {
-        funcionarios = new ArrayList<>();
-    }
+    private static List<Funcionario> funcionarios = new ArrayList<>();
 
     public boolean adicionarFuncionario(Funcionario funcionario) {
         if (funcionario != null) {
@@ -24,6 +20,15 @@ public class GestorFuncionarios implements RH {
 
     public List<Funcionario> listarFuncionarios() {
         return funcionarios;
+    }
+
+    public Funcionario procurarFuncionario(String matricula) {
+        for(Funcionario func : funcionarios) {
+            if(func.getMatricula().equals(matricula)) {
+                return func;
+            }
+        }
+        return null;
     }
 
     public List<Funcionario> listarFuncionariosAtivos() {
