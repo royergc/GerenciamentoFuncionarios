@@ -31,6 +31,16 @@ public class GestorFuncionarios implements RH {
         return null;
     }
 
+    public List<Gerente> listarGerentes() {
+        List<Gerente> gerentes = new ArrayList<>();
+        for(Funcionario func : funcionarios) {
+            if(func instanceof GerenteDepartamento || func instanceof GerenteGeral) {
+                gerentes.add((Gerente) func);
+            }
+        }
+        return gerentes;
+    }
+
     public List<Funcionario> listarFuncionariosAtivos() {
         List<Funcionario> funcionariosAtivos = new ArrayList<>();
         for(Funcionario func: funcionarios) {

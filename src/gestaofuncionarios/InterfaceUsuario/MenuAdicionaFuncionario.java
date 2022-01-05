@@ -27,7 +27,6 @@ public class MenuAdicionaFuncionario {
         gestor.adicionarFuncionario(funcionario);
         Departamento departamento = escolheDepartamento();
         Empresa.alocarDepartamento(departamento, funcionario);
-        System.out.println(funcionario);
     }
 
     public static Departamento escolheDepartamento() {

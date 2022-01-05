@@ -14,9 +14,7 @@ public class MenuMostraDetalhesFuncionario {
         limpaTela();
         System.out.println("Por favor, digite a matricula do funcionario: ");
         String matricula = lerEntradaString();
-        System.out.println("Matricula escolhida: " + matricula);
         Funcionario func = gestor.procurarFuncionario(matricula);
-        System.out.println(func);
         return func;
     }
 
@@ -37,8 +35,6 @@ public class MenuMostraDetalhesFuncionario {
                 System.out.println(line);
             }
             pulaLinha();
-            System.out.println("Pressione qualquer tecla para retornar ao menu principal");
-            entrada.nextLine();
         }
     }
 }

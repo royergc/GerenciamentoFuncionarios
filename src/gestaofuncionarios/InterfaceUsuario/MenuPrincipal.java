@@ -12,7 +12,7 @@ public class MenuPrincipal {
 
     public static void main(String[] args) {
 
-        GestorFuncionarios gestor = new GestorFuncionarios();
+       /* GestorFuncionarios gestor = new GestorFuncionarios();
         LocalDate dataNasc = LocalDate.of(1981, 9, 14);
         Pessoa pessoa1 = new Pessoa("Joao da Silva", "06706746991", "2004692", "Rua Lages, 268", "01/01/2000");
         GerenteGeral gerenteDpto1 = new GerenteGeral(pessoa1, "005/01", "joaodasilva@gmail.com", 25000);
@@ -30,7 +30,7 @@ public class MenuPrincipal {
         Departamento dptoMkt = new Departamento("Marketing");
         Empresa.alocarDepartamento(dptoMkt, colaborador1);
         System.out.println(gestor.listarFuncionarios().toString());
-
+*/
         mensagemBemVindo();
         int opcao;
         do {
@@ -40,13 +40,17 @@ public class MenuPrincipal {
                 case 1:
                     // adicionar funcionario
                     MenuAdicionaFuncionario.criaFuncionario();
+                    retornaMenuPrincipal();
                     break;
                 case 2:
                     // ver detalhes funcionario
                     MenuMostraDetalhesFuncionario.mostraDetalhes();
+                    retornaMenuPrincipal();
                     break;
                 case 3:
                     // demitir funcionario
+                    MenuDemitirFuncionario.demitirFuncionario();
+                    retornaMenuPrincipal();
                     break;
                 case 4:
                     // atualizar informações funcionario
@@ -92,6 +96,12 @@ public class MenuPrincipal {
         System.out.println(" 6 - Listar somente os funcionarios trabalhando (ativos)");
         System.out.println(" 7 - Listar somente os funcionarios demitidos");
         System.out.println(" 8 - Sair");
+    }
+
+    public static void retornaMenuPrincipal() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Pressione qualquer tecla para retornar ao menu principal");
+        entrada.nextLine();
     }
 }
 
