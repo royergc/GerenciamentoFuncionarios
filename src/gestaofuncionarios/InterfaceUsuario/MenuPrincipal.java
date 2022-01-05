@@ -1,6 +1,7 @@
-package gestaofuncionarios;
+package gestaofuncionarios.InterfaceUsuario;
 
 import gestaofuncionarios.Empresa.*;
+import gestaofuncionarios.Pessoa;
 
 import java.time.LocalDate;
 import java.util.Scanner;

@@ -7,10 +7,10 @@ import java.util.List;
 
 public class Empresa {
 
-    private List<Departamento> departamentos;
-    private GerenteGeral gerenteGeral;
+    private static List<Departamento> departamentos = new ArrayList<>();
+    private static GerenteGeral gerenteGeral;
 
-    public Empresa(Pessoa gerente) {
+/*    public Empresa(Pessoa gerente) {
 
         departamentos = new ArrayList<>();
         gerenteGeral = new GerenteGeral(gerente,"2022/001", "joaodasilva@gmail.com",25000);
@@ -19,38 +19,52 @@ public class Empresa {
         GestorFuncionarios gestorFuncionarios = new GestorFuncionarios();
         gestorFuncionarios.adicionarFuncionario(gerenteGeral);
         gerenteGeral.alocarDepartamento(dptoGerencia,gerenteGeral);
-    }
+    }*/
 
-    public boolean criaNovoDepartamento(Departamento departamento) {
-        if(departamento!= null) {
-            for(Departamento dpto : departamentos) {
-                if(dpto.getNomeDepartamento().equals(departamento.getNomeDepartamento())) {
-                    return false; // departamento ja existe
-                }
+    public static boolean alocarDepartamento(Departamento departamento, Funcionario funcionario) {
+    if(departamento !=  null) {
+        return departamento.addFuncionario(funcionario);
+    }
+    return false;
+}
+
+    public static boolean remanejarDepartamento(Departamento dptoOrigem, Departamento dptoDestino, Funcionario funcionario) {
+        if(dptoOrigem != null && dptoDestino != null) {
+            if (dptoOrigem.removeFuncionario(funcionario)) {
+                return dptoDestino.addFuncionario(funcionario);
             }
-            departamentos.add(departamento);
-            return true;
         }
         return false;
     }
 
-    public List<Departamento> listaDepartamentos() {
+    public static Departamento criaNovoDepartamento(String departamento) {
+        for(Departamento dpto : departamentos) {
+            if(dpto.getNomeDepartamento().equals(departamento)) {
+                return dpto; // departamento ja existe
+            }
+        }
+        Departamento depto = new Departamento(departamento);
+        departamentos.add(depto);
+        return depto;
+    }
+
+    public static List<Departamento> listaDepartamentos() {
         return departamentos;
     }
 
-    public GerenteGeral getGerenteGeral() {
+    public static GerenteGeral getGerenteGeral() {
         return gerenteGeral;
     }
 
-    public boolean setGerenteGeral(GerenteGeral gerenteGeral) {
-        if(gerenteGeral != null ) {
-            this.gerenteGeral = gerenteGeral;
+    public static boolean setGerenteGeral(GerenteGeral gg) {
+        if(gg != null ) {
+            gerenteGeral = gg;
             return true;
         }
         return false;
     }
 
-    public boolean setGerenteDepartamento(GerenteDepartamento gerente, Departamento departamento) {
+    public static boolean setGerenteDepartamento(GerenteDepartamento gerente, Departamento departamento) {
         if(gerente != null && departamento != null) {
             return departamento.setGerenteDepartamento(gerente);
         }
