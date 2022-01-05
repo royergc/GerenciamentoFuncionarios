@@ -16,7 +16,8 @@ public class MenuDemitirFuncionario {
         Funcionario funcionario = escolherFuncionario();
         if (funcionario == null) {
             System.out.println("Erro: Funcionario não encontrado");
-        } else {
+        }
+        else {
             System.out.println("Exibindo dados do funcionario a ser demitido");
             pulaLinha();
             for (String line : funcionario.getDadosFuncionario()) {
@@ -31,21 +32,21 @@ public class MenuDemitirFuncionario {
                 mostraGerentes(funcionario);
             }
         }
-
     }
-
 
     public static void mostraGerentes(Funcionario funcionario) {
         GestorFuncionarios gestor = new GestorFuncionarios();
         List<Gerente> gerentes = gestor.listarGerentes();
         if(gerentes.isEmpty()) {
             System.out.println("Nao eh possivel demitir ninguem sem um Gerente ativo para autorizar");
-        } else {
+        }
+        else {
             System.out.println("Por favor, escolha o gerente que autorizou a demissao: ");
             for(int i = 0 ; i < gerentes.size(); i++) {
                 if(gerentes.get(i) instanceof GerenteGeral) {
                     System.out.println(i + ((GerenteGeral) gerentes.get(i)).getNome());
-                } else {
+                }
+                else {
                     System.out.println(i + ((GerenteDepartamento) gerentes.get(i)).getNome());
                 }
             }
