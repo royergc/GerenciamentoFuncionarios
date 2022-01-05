@@ -23,8 +23,6 @@ public class MenuMostraDetalhesFuncionario {
         Funcionario funcionario = escolherFuncionario();
         if(funcionario == null) {
             System.out.println("Erro: Funcionario não encontrado");
-            System.out.println("Pressione qualquer tecla para voltar ao menu principal");
-            entrada.nextLine();
         }
         else {
             System.out.println("=============================");

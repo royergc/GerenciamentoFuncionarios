@@ -31,11 +31,13 @@ public class GestorFuncionarios implements RH {
         return null;
     }
 
-    public List<Gerente> listarGerentes() {
+    public List<Gerente> listarGerentesAtivos() {
         List<Gerente> gerentes = new ArrayList<>();
         for(Funcionario func : funcionarios) {
             if(func instanceof GerenteDepartamento || func instanceof GerenteGeral) {
-                gerentes.add((Gerente) func);
+                if(func.isAtivo()) {
+                    gerentes.add((Gerente) func);
+                }
             }
         }
         return gerentes;

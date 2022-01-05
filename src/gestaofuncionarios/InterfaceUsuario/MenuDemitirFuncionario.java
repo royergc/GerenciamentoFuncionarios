@@ -35,7 +35,7 @@ public class MenuDemitirFuncionario {
 
     public static void mostraGerentes(Funcionario funcionario) {
         GestorFuncionarios gestor = new GestorFuncionarios();
-        List<Gerente> gerentes = gestor.listarGerentes();
+        List<Gerente> gerentes = gestor.listarGerentesAtivos();
         if(gerentes.isEmpty()) {
             System.out.println("Nao eh possivel demitir ninguem sem um Gerente ativo para autorizar");
         }
