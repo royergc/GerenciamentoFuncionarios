@@ -1,6 +1,5 @@
 package gestaofuncionarios.InterfaceUsuario;
 
-import gestaofuncionarios.Empresa.Colaborador;
 import gestaofuncionarios.Empresa.Funcionario;
 import gestaofuncionarios.Empresa.GestorFuncionarios;
 
