@@ -1,4 +1,4 @@
-package gestaofuncionarios.InterfaceUsuario;
+package gestaofuncionarios.interfaceusuario;
 
 import java.util.Scanner;
 
@@ -36,5 +36,4 @@ public class CommandLineUtils {
         Scanner entrada = new Scanner(System.in);
         return entrada.nextLine();
     }
-
 }

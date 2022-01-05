@@ -1,8 +1,8 @@
-package gestaofuncionarios.InterfaceUsuario;
+package gestaofuncionarios.interfaceusuario;
 
 import java.util.Scanner;
 
-import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.*;
+import static gestaofuncionarios.interfaceusuario.CommandLineUtils.*;
 
 public class MenuPrincipal {
 
@@ -16,37 +16,30 @@ public class MenuPrincipal {
             opcao = lerEntradaInt();
             switch(opcao){
                 case 1:
-                    // adicionar funcionario
                     MenuAdicionaFuncionario.criaFuncionario();
                     retornaMenuPrincipal();
                     break;
                 case 2:
-                    // ver detalhes funcionario
                     MenuMostraDetalhesFuncionario.mostraDetalhes();
                     retornaMenuPrincipal();
                     break;
                 case 3:
-                    // demitir funcionario
                     MenuDemitirFuncionario.demitirFuncionario();
                     retornaMenuPrincipal();
                     break;
                 case 4:
-                    // atualizar informações funcionario
                     MenuAtualizaInfoFuncionarios.atualizaInfoFuncionarios();
                     retornaMenuPrincipal();
                     break;
                 case 5:
-                    // listar funcionarios
                     MenuListaFuncionarios.listaFuncionarios(ListaFuncionariosEnum.TODOS);
                     retornaMenuPrincipal();
                     break;
                 case 6:
-                    // listar somente funcionarios trabalhando
                     MenuListaFuncionarios.listaFuncionarios(ListaFuncionariosEnum.ATIVOS);
                     retornaMenuPrincipal();
                     break;
                 case 7:
-                    // listar somente funcionarios demitidos
                     MenuListaFuncionarios.listaFuncionarios(ListaFuncionariosEnum.DEMITIDOS);
                     retornaMenuPrincipal();
                     break;

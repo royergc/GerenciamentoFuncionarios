@@ -1,12 +1,12 @@
-package gestaofuncionarios.InterfaceUsuario;
+package gestaofuncionarios.interfaceusuario;
 
-import gestaofuncionarios.Empresa.*;
+import gestaofuncionarios.empresa.*;
 
 import java.util.List;
 import java.util.Scanner;
 
-import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.*;
-import static gestaofuncionarios.InterfaceUsuario.MenuMostraDetalhesFuncionario.escolherFuncionario;
+import static gestaofuncionarios.interfaceusuario.CommandLineUtils.*;
+import static gestaofuncionarios.interfaceusuario.MenuMostraDetalhesFuncionario.escolherFuncionario;
 
 public class MenuDemitirFuncionario {
 

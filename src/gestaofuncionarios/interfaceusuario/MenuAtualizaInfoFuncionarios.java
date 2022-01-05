@@ -1,10 +1,10 @@
-package gestaofuncionarios.InterfaceUsuario;
+package gestaofuncionarios.interfaceusuario;
 
-import gestaofuncionarios.Empresa.Funcionario;
-import gestaofuncionarios.Empresa.GestorFuncionarios;
+import gestaofuncionarios.empresa.Funcionario;
+import gestaofuncionarios.empresa.GestorFuncionarios;
 
-import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.*;
-import static gestaofuncionarios.InterfaceUsuario.MenuMostraDetalhesFuncionario.escolherFuncionario;
+import static gestaofuncionarios.interfaceusuario.CommandLineUtils.*;
+import static gestaofuncionarios.interfaceusuario.MenuMostraDetalhesFuncionario.escolherFuncionario;
 
 public class MenuAtualizaInfoFuncionarios {
 

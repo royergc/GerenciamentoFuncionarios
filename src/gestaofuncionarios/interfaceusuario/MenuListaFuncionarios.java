@@ -1,13 +1,13 @@
-package gestaofuncionarios.InterfaceUsuario;
+package gestaofuncionarios.interfaceusuario;
 
-import gestaofuncionarios.Empresa.Funcionario;
-import gestaofuncionarios.Empresa.GestorFuncionarios;
+import gestaofuncionarios.empresa.Funcionario;
+import gestaofuncionarios.empresa.GestorFuncionarios;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.limpaTela;
-import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.pulaLinha;
+import static gestaofuncionarios.interfaceusuario.CommandLineUtils.limpaTela;
+import static gestaofuncionarios.interfaceusuario.CommandLineUtils.pulaLinha;
 
 public class MenuListaFuncionarios {
 
@@ -22,6 +22,7 @@ public class MenuListaFuncionarios {
         }
         if(listaFuncionarios.isEmpty()) {
             System.out.println("Nenhum funcionario encontrado");
+            pulaLinha();
         }
         else {
             for (Funcionario funcionario : listaFuncionarios) {

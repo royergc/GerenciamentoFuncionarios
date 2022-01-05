@@ -1,9 +1,9 @@
-package gestaofuncionarios.InterfaceUsuario;
+package gestaofuncionarios.interfaceusuario;
 
-import gestaofuncionarios.Empresa.*;
+import gestaofuncionarios.empresa.*;
 import gestaofuncionarios.Pessoa;
 
-import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.*;
+import static gestaofuncionarios.interfaceusuario.CommandLineUtils.*;
 
 public class MenuAdicionaFuncionario {
 

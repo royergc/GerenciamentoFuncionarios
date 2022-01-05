@@ -1,4 +1,4 @@
-package gestaofuncionarios.Empresa;
+package gestaofuncionarios.empresa;
 
 public interface Gerente  {
     boolean definirLiderTecnico(Funcionario funcionario, String nomeLiderTecnico);

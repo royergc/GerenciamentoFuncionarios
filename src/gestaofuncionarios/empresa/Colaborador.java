@@ -1,8 +1,7 @@
-package gestaofuncionarios.Empresa;
+package gestaofuncionarios.empresa;
 
 import gestaofuncionarios.Pessoa;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Colaborador extends Funcionario {

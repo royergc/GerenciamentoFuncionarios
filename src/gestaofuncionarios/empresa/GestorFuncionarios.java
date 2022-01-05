@@ -1,4 +1,4 @@
-package gestaofuncionarios.Empresa;
+package gestaofuncionarios.empresa;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

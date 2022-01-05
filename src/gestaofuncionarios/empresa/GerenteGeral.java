@@ -1,18 +1,17 @@
-package gestaofuncionarios.Empresa;
+package gestaofuncionarios.empresa;
 
 import gestaofuncionarios.Pessoa;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class GerenteDepartamento extends Funcionario implements Gerente {
+public class GerenteGeral extends Funcionario implements Gerente {
 
-    public GerenteDepartamento(String nome, String cpf, String rg, String endereco, String dataNascimento,
-                               String matricula, String email, double salarioBase) {
+    public GerenteGeral(String nome, String cpf, String rg, String endereco, String dataNascimento,
+                        String matricula, String email, double salarioBase) {
         super(nome, cpf, rg, endereco, dataNascimento, matricula, email, salarioBase);
     }
 
-    public GerenteDepartamento(Pessoa pessoa, String matricula, String email, double salarioBase) {
+    public GerenteGeral(Pessoa pessoa, String matricula, String email, double salarioBase) {
         super(pessoa, matricula, email, salarioBase);
     }
 
@@ -39,7 +38,7 @@ public class GerenteDepartamento extends Funcionario implements Gerente {
     public List<String> getDadosFuncionario() {
         List<String> dadosFuncionario = super.getDadosFuncionario();
         if(isAtivo()){
-            dadosFuncionario.add("Cargo atual: Gerente de Departamento");
+            dadosFuncionario.add("Cargo atual: Gerente Geral");
         }
         else {
             dadosFuncionario.add("Cargo atual: Demitido");

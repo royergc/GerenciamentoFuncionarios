@@ -1,6 +1,4 @@
-package gestaofuncionarios.Empresa;
-
-import gestaofuncionarios.Pessoa;
+package gestaofuncionarios.empresa;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,23 +8,12 @@ public class Empresa {
     private static List<Departamento> departamentos = new ArrayList<>();
     private static GerenteGeral gerenteGeral;
 
-/*    public Empresa(Pessoa gerente) {
-
-        departamentos = new ArrayList<>();
-        gerenteGeral = new GerenteGeral(gerente,"2022/001", "joaodasilva@gmail.com",25000);
-        Departamento dptoGerencia = new Departamento("Gerencia");
-
-        GestorFuncionarios gestorFuncionarios = new GestorFuncionarios();
-        gestorFuncionarios.adicionarFuncionario(gerenteGeral);
-        gerenteGeral.alocarDepartamento(dptoGerencia,gerenteGeral);
-    }*/
-
     public static boolean alocarDepartamento(Departamento departamento, Funcionario funcionario) {
-    if(departamento !=  null) {
-        return departamento.addFuncionario(funcionario);
+        if(departamento !=  null) {
+            return departamento.addFuncionario(funcionario);
+        }
+        return false;
     }
-    return false;
-}
 
     public static boolean remanejarDepartamento(Departamento dptoOrigem, Departamento dptoDestino, Funcionario funcionario) {
         if(dptoOrigem != null && dptoDestino != null) {
