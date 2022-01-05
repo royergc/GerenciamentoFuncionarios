@@ -37,14 +37,18 @@ public class MenuPrincipal {
                     break;
                 case 5:
                     // listar funcionarios
-                    MenuListaFuncionarios.listaFuncionarios();
+                    MenuListaFuncionarios.listaFuncionarios(ListaFuncionariosEnum.TODOS);
                     retornaMenuPrincipal();
                     break;
                 case 6:
                     // listar somente funcionarios trabalhando
+                    MenuListaFuncionarios.listaFuncionarios(ListaFuncionariosEnum.ATIVOS);
+                    retornaMenuPrincipal();
                     break;
                 case 7:
                     // listar somente funcionarios demitidos
+                    MenuListaFuncionarios.listaFuncionarios(ListaFuncionariosEnum.DEMITIDOS);
+                    retornaMenuPrincipal();
                     break;
             }
         } while(opcao != 8);

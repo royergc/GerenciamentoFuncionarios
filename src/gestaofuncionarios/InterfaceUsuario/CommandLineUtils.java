@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class CommandLineUtils {
 
+    public enum ListaFuncionariosEnum {
+        TODOS,
+        ATIVOS,
+        DEMITIDOS
+    }
+
     public static void limpaTela() {
         System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n");
     }
