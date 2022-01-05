@@ -3,6 +3,8 @@ package gestaofuncionarios.Empresa;
 import gestaofuncionarios.Pessoa;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LiderTecnico extends Funcionario {
 
@@ -13,6 +15,14 @@ public class LiderTecnico extends Funcionario {
 
     public LiderTecnico(Pessoa pessoa, String matricula, String email, double salarioBase) {
         super(pessoa, matricula, email, salarioBase);
+    }
+
+    @Override
+    public List<String> getDadosFuncionario() {
+        List<String> dadosFuncionario = new ArrayList<>();
+        dadosFuncionario = super.getDadosFuncionario();
+        dadosFuncionario.add("Cargo atual: Lider Tecnico");
+        return dadosFuncionario;
     }
 
     @Override

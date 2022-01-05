@@ -2,6 +2,9 @@ package gestaofuncionarios.Empresa;
 
 import gestaofuncionarios.Pessoa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GerenteGeral extends Funcionario implements Gerente {
 
     public GerenteGeral(String nome, String cpf, String rg, String endereco, String dataNascimento,
@@ -30,5 +33,13 @@ public class GerenteGeral extends Funcionario implements Gerente {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<String> getDadosFuncionario() {
+        List<String> dadosFuncionario = new ArrayList<>();
+        dadosFuncionario = super.getDadosFuncionario();
+        dadosFuncionario.add("Cargo atual: Gerente Geral");
+        return dadosFuncionario;
     }
 }

@@ -3,6 +3,8 @@ package gestaofuncionarios.Empresa;
 import gestaofuncionarios.Pessoa;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Colaborador extends Funcionario {
 
@@ -25,6 +27,14 @@ public class Colaborador extends Funcionario {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<String> getDadosFuncionario() {
+        List<String> dadosFuncionario = new ArrayList<>();
+        dadosFuncionario = super.getDadosFuncionario();
+        dadosFuncionario.add("Cargo atual: Colaborador");
+        return dadosFuncionario;
     }
 
     @Override
