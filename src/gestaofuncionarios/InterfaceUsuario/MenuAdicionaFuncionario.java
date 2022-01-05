@@ -5,7 +5,7 @@ import gestaofuncionarios.Pessoa;
 
 import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.*;
 
-public class AdicionaFuncionario {
+public class MenuAdicionaFuncionario {
 
     public enum tipoFuncionarioEnum {
         COLABORADOR,
@@ -14,15 +14,47 @@ public class AdicionaFuncionario {
         GERENTEGERAL
     }
 
-    public static void exibeMenuAdicionarFuncionario() {
+    public static void criaFuncionario() {
         limpaTela();
         System.out.println("======================");
         System.out.println("Adicionar Funcionario");
         System.out.println("======================");
         pulaLinha();
         Pessoa pessoa = coletaDadosPessoais();
-        Funcionario funcionario = coletaDadosFuncionario(pessoa,tipoFuncionarioEnum.COLABORADOR);
+        tipoFuncionarioEnum cargo = escolheTipoFuncionario();
+        Funcionario funcionario = coletaDadosFuncionario(pessoa,cargo);
+        GestorFuncionarios gestor = new GestorFuncionarios();
+        gestor.adicionarFuncionario(funcionario);
+        Departamento departamento = escolheDepartamento();
+        Empresa.alocarDepartamento(departamento, funcionario);
+        System.out.println(funcionario);
+    }
 
+    public static Departamento escolheDepartamento() {
+        System.out.println("Por favor, selecione em qual Departamento o funcionario será alocado: ");
+        String nomeDepartamento = lerEntradaString();
+        Departamento departamento = Empresa.criaNovoDepartamento(nomeDepartamento);
+        return departamento;
+    }
+
+    public static tipoFuncionarioEnum escolheTipoFuncionario() {
+        tipoFuncionarioEnum cargo;
+        pulaLinha();
+        System.out.println("Por favor, escolha o cargo desejado para o funcionario: ");
+        System.out.println(" 1 - Colaborador");
+        System.out.println(" 2 - Lider Tecnico");
+        System.out.println(" 3 - Gerente Departamento");
+        System.out.println(" 4 - Gerente Geral");
+        pulaLinha();
+        int escolha = lerEntradaInt();
+        switch(escolha) {
+            case 1 -> cargo = tipoFuncionarioEnum.COLABORADOR;
+            case 2 -> cargo = tipoFuncionarioEnum.LIDERTECNICO;
+            case 3 -> cargo = tipoFuncionarioEnum.GERENTEDEPARTAMENTO;
+            case 4 -> cargo = tipoFuncionarioEnum.GERENTEGERAL;
+            default -> cargo = tipoFuncionarioEnum.COLABORADOR;
+        }
+        return cargo;
     }
 
     public static Pessoa coletaDadosPessoais() {

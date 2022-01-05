@@ -32,7 +32,7 @@ public class Colaborador extends Funcionario {
         return "===============  Colaborador ============= \n" +
                 "Nome: " + this.getNome()  + "\n " +
                 "Matricula: " + this.getMatricula() + "\n " +
-                "Data admissao: " + this.getDataAdmissao() + "\n" +
-                "Lider Tecnico: " + liderTecnico.getNome() + "\n";
+                "Data admissao: " + this.getDataAdmissao() + "\n" /*+
+                "Lider Tecnico: " + liderTecnico.getNome() + "\n"*/;
     }
 }

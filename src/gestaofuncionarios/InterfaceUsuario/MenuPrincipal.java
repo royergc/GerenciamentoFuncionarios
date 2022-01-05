@@ -6,7 +6,9 @@ import gestaofuncionarios.Pessoa;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class InterfaceCLI {
+import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.*;
+
+public class MenuPrincipal {
 
     public static void main(String[] args) {
 
@@ -26,7 +28,7 @@ public class InterfaceCLI {
         gestor.adicionarFuncionario(lider1);
         gerenteDpto1.definirLiderTecnico(colaborador1, lider1);
         Departamento dptoMkt = new Departamento("Marketing");
-        gerenteDpto1.alocarDepartamento(dptoMkt, colaborador1);
+        Empresa.alocarDepartamento(dptoMkt, colaborador1);
         System.out.println(gestor.listarFuncionarios().toString());
 
         mensagemBemVindo();
@@ -37,9 +39,11 @@ public class InterfaceCLI {
             switch(opcao){
                 case 1:
                     // adicionar funcionario
+                    MenuAdicionaFuncionario.criaFuncionario();
                     break;
                 case 2:
                     // ver detalhes funcionario
+                    MenuMostraDetalhesFuncionario.mostraDetalhes();
                     break;
                 case 3:
                     // demitir funcionario
@@ -58,13 +62,15 @@ public class InterfaceCLI {
                     break;
             }
         } while(opcao != 8);
+        System.out.println("Obrigado por utilizar o sistema, ate breve");
     }
 
     public static void mensagemBemVindo() {
-        limpaPagina();
+        limpaTela();
         System.out.println(" ======================================================");
         System.out.println(" Bem vindo ao sistema de Gerenciamento de Funcionarios ");
         System.out.println(" ======================================================");
+        pulaLinha();
         pulaLinha();
         pulaLinha();
         pulaLinha();
@@ -74,7 +80,7 @@ public class InterfaceCLI {
     }
 
     public static void exibeMenuPrincipal() {
-        limpaPagina();
+        limpaTela();
         System.out.println("=========================");
         System.out.println("Escolha a opcao desejada: ");
         System.out.println("=========================");
@@ -86,21 +92,6 @@ public class InterfaceCLI {
         System.out.println(" 6 - Listar somente os funcionarios trabalhando (ativos)");
         System.out.println(" 7 - Listar somente os funcionarios demitidos");
         System.out.println(" 8 - Sair");
-    }
-
-    public static void limpaPagina() {
-        System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n");
-    }
-
-    public static void pulaLinha() {
-        System.out.printf("%n");
-    }
-
-    public static int lerEntradaInt() {
-        Scanner entrada = new Scanner(System.in);
-        String parser = entrada.nextLine();
-        parser = parser.replaceAll( "[^0-9]","0");
-        return Integer.parseInt(parser);
     }
 }
 
