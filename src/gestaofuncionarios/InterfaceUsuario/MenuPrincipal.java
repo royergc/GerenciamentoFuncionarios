@@ -32,6 +32,8 @@ public class MenuPrincipal {
                     break;
                 case 4:
                     // atualizar informações funcionario
+                    MenuAtualizaInfoFuncionarios.atualizaInfoFuncionarios();
+                    retornaMenuPrincipal();
                     break;
                 case 5:
                     // listar funcionarios
