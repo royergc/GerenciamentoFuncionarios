@@ -37,9 +37,13 @@ public class GerenteGeral extends Funcionario implements Gerente {
 
     @Override
     public List<String> getDadosFuncionario() {
-        List<String> dadosFuncionario = new ArrayList<>();
-        dadosFuncionario = super.getDadosFuncionario();
-        dadosFuncionario.add("Cargo atual: Gerente Geral");
+        List<String> dadosFuncionario = super.getDadosFuncionario();
+        if(isAtivo()){
+            dadosFuncionario.add("Cargo atual: Gerente Geral");
+        }
+        else {
+            dadosFuncionario.add("Cargo atual: Demitido");
+        }
         return dadosFuncionario;
     }
 }

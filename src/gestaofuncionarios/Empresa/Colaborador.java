@@ -28,9 +28,13 @@ public class Colaborador extends Funcionario {
 
     @Override
     public List<String> getDadosFuncionario() {
-        List<String> dadosFuncionario = new ArrayList<>();
-        dadosFuncionario = super.getDadosFuncionario();
-        dadosFuncionario.add("Cargo atual: Colaborador");
+        List<String> dadosFuncionario = super.getDadosFuncionario();
+        if(isAtivo()){
+            dadosFuncionario.add("Cargo atual: Colaborador");
+        }
+        else {
+            dadosFuncionario.add("Cargo atual: Demitido");
+        }
         return dadosFuncionario;
     }
 
@@ -39,7 +43,6 @@ public class Colaborador extends Funcionario {
         return "===============  Colaborador ============= \n" +
                 "Nome: " + this.getNome()  + "\n " +
                 "Matricula: " + this.getMatricula() + "\n " +
-                "Data admissao: " + this.getDataAdmissao() + "\n" +
-                "Lider Tecnico: " + this.getLiderTecnico() + "\n";
+                "Data admissao: " + this.getDataAdmissao();
     }
 }

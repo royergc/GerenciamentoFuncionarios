@@ -18,9 +18,13 @@ public class LiderTecnico extends Funcionario {
 
     @Override
     public List<String> getDadosFuncionario() {
-        List<String> dadosFuncionario = new ArrayList<>();
-        dadosFuncionario = super.getDadosFuncionario();
-        dadosFuncionario.add("Cargo atual: Lider Tecnico");
+        List<String> dadosFuncionario = super.getDadosFuncionario();
+        if(isAtivo()){
+            dadosFuncionario.add("Cargo atual: Lider Tecnico");
+        }
+        else {
+            dadosFuncionario.add("Cargo atual: Demitido");
+        }
         return dadosFuncionario;
     }
 
