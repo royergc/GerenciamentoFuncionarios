@@ -13,10 +13,12 @@ public class Colaborador extends Funcionario {
     public Colaborador(String nome, String cpf, String rg, String endereco, String dataNascimento,
                        String matricula, String email, double salarioBase) {
         super(nome, cpf, rg, endereco, dataNascimento, matricula, email, salarioBase);
+        liderTecnico = "Lider Tecnico a definir";
     }
 
     public Colaborador(Pessoa pessoa, String matricula, String email, double salarioBase) {
         super(pessoa, matricula, email, salarioBase);
+        liderTecnico = "Lider Tecnico a definir";
     }
 
     public String getLiderTecnico() { return liderTecnico; }
@@ -38,7 +40,7 @@ public class Colaborador extends Funcionario {
         return "===============  Colaborador ============= \n" +
                 "Nome: " + this.getNome()  + "\n " +
                 "Matricula: " + this.getMatricula() + "\n " +
-                "Data admissao: " + this.getDataAdmissao() + "\n" /*+
-                "Lider Tecnico: " + liderTecnico.getNome() + "\n"*/;
+                "Data admissao: " + this.getDataAdmissao() + "\n" +
+                "Lider Tecnico: " + this.getLiderTecnico() + "\n";
     }
 }
