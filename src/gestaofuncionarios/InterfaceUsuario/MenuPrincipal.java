@@ -1,9 +1,5 @@
 package gestaofuncionarios.InterfaceUsuario;
 
-import gestaofuncionarios.Empresa.*;
-import gestaofuncionarios.Pessoa;
-
-import java.time.LocalDate;
 import java.util.Scanner;
 
 import static gestaofuncionarios.InterfaceUsuario.CommandLineUtils.*;
@@ -12,26 +8,8 @@ public class MenuPrincipal {
 
     public static void main(String[] args) {
 
-       /* GestorFuncionarios gestor = new GestorFuncionarios();
-        LocalDate dataNasc = LocalDate.of(1981, 9, 14);
-        Pessoa pessoa1 = new Pessoa("Joao da Silva", "06706746991", "2004692", "Rua Lages, 268", "01/01/2000");
-        GerenteGeral gerenteDpto1 = new GerenteGeral(pessoa1, "005/01", "joaodasilva@gmail.com", 25000);
-
-        Colaborador colaborador1 = new Colaborador("Guilherme", "03596463955", "2004692", "Rua Coronel Santiago, 859", "10/10/2010",
-                "001/21", "guilherme.royer@gmail.com", 4500.00);
-
-        LiderTecnico lider1 = new LiderTecnico("Thiago", "03596463955", "2004692", "Rua Coronel Santiago, 859", "01/01/2001",
-                "003/21", "lider.tecnico@gmail.com", 12500.00);
-
-        gestor.adicionarFuncionario(gerenteDpto1);
-        gestor.adicionarFuncionario(colaborador1);
-        gestor.adicionarFuncionario(lider1);
-        gerenteDpto1.definirLiderTecnico(colaborador1, lider1.getNome());
-        Departamento dptoMkt = new Departamento("Marketing");
-        Empresa.alocarDepartamento(dptoMkt, colaborador1);
-        System.out.println(gestor.listarFuncionarios().toString());
-*/
         mensagemBemVindo();
+
         int opcao;
         do {
             exibeMenuPrincipal();
