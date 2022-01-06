@@ -33,12 +33,12 @@ Decidi criar as seguintes classes
 - Funcionário: classe abstrata, herda os dados pessoais de Pessoa e adiciona dados básicos relativos à empresa, como matricula, email, salario, cargo, dataAdmissao e se está ativo na empresa (inativo signifca que foi demitido, mas os dados continuarão no sistema, conforme requisito)
 - Colaborador: herda de funcionário, tem associado a ele um LiderTecnico.
 - LiderTecnico: herda de funcionário.
-- GerenteDepartamento: herda de funcionário e implementa a interface Gerente, que define os comportamentos de alocar e remanejar os funcionários nos Departamentos, promover e demitir funcionários
+- GerenteDepartamento: herda de funcionário e implementa a interface Gerente, que define os comportamentos de definir lidertecnico dos colaboradores e demitir funcionários
 - GerenteGeral: herda de funcionário e também implementa a interface Gerente, implementando os mesmos comportamentos
 - GestorFuncionarios: implementa a interface RH, que define os comportamentos de adicionar funcionario na empresa, alterar os dados do funcionario, aumentar salário do funcionario, listar todos os funcionarios, listar os funcionarios ativos e os funcionarios inativos. 
 - Departamento: possui um GerenteDepartamento e uma lista de Funcionários que fazem parte do departamento, com os métodos para adicionar e remover funcionários desse departamento.
-- Empresa: possui uma lista de Departamentos e guarda o GerenteGeral da empresa, além dos métodos de criarDepartamentos e definir GerenteDepartamento e GerenteGeral
-- InterfaceCLI: responsável por rodar a aplicação e fazer a interface com o usuário. Ela interage com o sistema através das interfaces do RH e do Gerente. 
+- Empresa: possui uma lista de Departamentos e guarda o GerenteGeral da empresa, além dos métodos de alocar e remanejar os funcionários nos Departamentos, criar Departamentos e definir GerenteDepartamento e GerenteGeral
+- Pacote interfaceusuario: Pacote com diversas classes responsáveis por rodar a aplicação e fazer a interface com o usuário. Ela interage com o sistema através das interfaces do RH e do Gerente e dos metodos estaticos da classe Empresa. 
 
 Criei um diagrama de classes simplificado para tentar ilustrar a arquitetura do sistema e o relacionamento entre as classes do projeto:
 
