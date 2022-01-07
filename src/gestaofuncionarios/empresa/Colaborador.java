@@ -9,13 +9,13 @@ public class Colaborador extends Funcionario {
     private String liderTecnico;
 
     public Colaborador(String nome, String cpf, String rg, String endereco, String dataNascimento,
-                       String matricula, String email, double salarioBase) {
-        super(nome, cpf, rg, endereco, dataNascimento, matricula, email, salarioBase);
+                       String email, double salarioBase) {
+        super(nome, cpf, rg, endereco, dataNascimento, email, salarioBase);
         liderTecnico = "Lider Tecnico a definir";
     }
 
-    public Colaborador(Pessoa pessoa, String matricula, String email, double salarioBase) {
-        super(pessoa, matricula, email, salarioBase);
+    public Colaborador(Pessoa pessoa, String email, double salarioBase) {
+        super(pessoa, email, salarioBase);
         liderTecnico = "Lider Tecnico a definir";
     }
 

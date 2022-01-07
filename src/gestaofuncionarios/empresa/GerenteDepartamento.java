@@ -7,12 +7,12 @@ import java.util.List;
 public class GerenteDepartamento extends Funcionario implements Gerente {
 
     public GerenteDepartamento(String nome, String cpf, String rg, String endereco, String dataNascimento,
-                               String matricula, String email, double salarioBase) {
-        super(nome, cpf, rg, endereco, dataNascimento, matricula, email, salarioBase);
+                               String email, double salarioBase) {
+        super(nome, cpf, rg, endereco, dataNascimento, email, salarioBase);
     }
 
-    public GerenteDepartamento(Pessoa pessoa, String matricula, String email, double salarioBase) {
-        super(pessoa, matricula, email, salarioBase);
+    public GerenteDepartamento(Pessoa pessoa, String email, double salarioBase) {
+        super(pessoa, email, salarioBase);
     }
 
     public boolean definirLiderTecnico(Funcionario funcionario, String nomeLiderTecnico) {

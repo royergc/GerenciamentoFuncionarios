@@ -7,12 +7,12 @@ import java.util.List;
 public class LiderTecnico extends Funcionario {
 
     public LiderTecnico(String nome, String cpf, String rg, String endereco, String dataNascimento,
-                        String matricula, String email, double salarioBase) {
-        super(nome, cpf, rg, endereco, dataNascimento, matricula, email, salarioBase);
+                        String email, double salarioBase) {
+        super(nome, cpf, rg, endereco, dataNascimento, email, salarioBase);
     }
 
-    public LiderTecnico(Pessoa pessoa, String matricula, String email, double salarioBase) {
-        super(pessoa, matricula, email, salarioBase);
+    public LiderTecnico(Pessoa pessoa, String email, double salarioBase) {
+        super(pessoa, email, salarioBase);
     }
 
     @Override

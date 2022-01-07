@@ -27,6 +27,15 @@ public class MenuAdicionaFuncionario {
         gestor.adicionarFuncionario(funcionario);
         Departamento departamento = escolheDepartamento();
         Empresa.alocarDepartamento(departamento, funcionario);
+        pulaLinha();
+        System.out.println("========================================================");
+        System.out.println("Funcionario criado com sucesso - Matricula = " + funcionario.getMatricula());
+        System.out.println("========================================================");
+        pulaLinha();
+        for(String linha : funcionario.getDadosFuncionario()) {
+            System.out.println(linha);
+        }
+        pulaLinha();
     }
 
     public static Departamento escolheDepartamento() {
@@ -79,19 +88,16 @@ public class MenuAdicionaFuncionario {
     public static Funcionario coletaDadosFuncionario(Pessoa pessoa,tipoFuncionarioEnum cargo) {
         Funcionario funcionario;
         pulaLinha();
-        System.out.println("Por favor, insira a Matricula do funcionario: ");
-        String matricula = lerEntradaString();
-        pulaLinha();
         System.out.println("Por favor, insira o email do funcionario: ");
         String email = lerEntradaString();
         pulaLinha();
         System.out.println("Por favor, insira o salario do funcionario: ");
         double salario = lerEntradaDouble();
         switch(cargo) {
-            case COLABORADOR -> funcionario = new Colaborador(pessoa,matricula,email,salario);
-            case LIDERTECNICO -> funcionario = new LiderTecnico(pessoa,matricula,email,salario);
-            case GERENTEDEPARTAMENTO -> funcionario = new GerenteDepartamento(pessoa,matricula,email,salario);
-            case GERENTEGERAL -> funcionario = new GerenteGeral(pessoa,matricula,email,salario);
+            case COLABORADOR -> funcionario = new Colaborador(pessoa,email,salario);
+            case LIDERTECNICO -> funcionario = new LiderTecnico(pessoa,email,salario);
+            case GERENTEDEPARTAMENTO -> funcionario = new GerenteDepartamento(pessoa,email,salario);
+            case GERENTEGERAL -> funcionario = new GerenteGeral(pessoa,email,salario);
             default -> funcionario = null;
         }
         return funcionario;

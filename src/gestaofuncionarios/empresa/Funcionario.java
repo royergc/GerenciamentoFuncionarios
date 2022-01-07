@@ -9,6 +9,8 @@ import java.util.List;
 
 public abstract class Funcionario extends Pessoa {
 
+    private static int matriculaGenerator;
+
     private String matricula;
     private String email;
     private double salarioBase;
@@ -16,18 +18,20 @@ public abstract class Funcionario extends Pessoa {
     private boolean ativo;
 
     public Funcionario(String nome, String cpf, String rg, String endereco, String dataNascimento,
-                       String matricula, String email, double salarioBase) {
+                       String email, double salarioBase) {
         super(nome, cpf, rg, endereco, dataNascimento);
-        this.matricula = matricula;
+        matriculaGenerator++;
+        this.matricula = String.valueOf(matriculaGenerator);
         this.email = email;
         this.salarioBase = salarioBase;
         this.dataAdmissao = LocalDate.now();
         this.ativo = true;
     }
 
-    public Funcionario(Pessoa pessoa, String matricula, String email, double salarioBase){
+    public Funcionario(Pessoa pessoa, String email, double salarioBase){
         super(pessoa.getNome(), pessoa.getCpf(), pessoa.getRg(),pessoa.getEndereco(),pessoa.getDataNascimento());
-        this.matricula = matricula;
+        matriculaGenerator++;
+        this.matricula = String.valueOf(matriculaGenerator);
         this.email = email;
         this.salarioBase = salarioBase;
         this.dataAdmissao = LocalDate.now();
